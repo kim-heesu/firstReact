@@ -307,5 +307,77 @@
         예를들면
         true이면 버튼을 보여주고 false이면 버튼을 가린다
     </pre>
+
+    <pre>
+       자바스크립트의   map()
+        map()함수안에 있는 엘리먼트는 꼭 키값이 필요하다.
+
+       const doubled = numbers.map((number)=> number*2)
+
+
+       예제코드
+        <code>
+       const number = [1,2,3,4,5]
+       const listItems = numbers.map((number)=>
+            <li>{number}</li>
+       );
+
+       ReactDOM.render(
+        <ul>{listItems}</ul>
+        document.getElementById('root')
+       );
+    </code>
+결과코드
+<code>
+    ReactDOM.render(
+        <ul>
+            <li>{1}</li>
+            <li>{2}</li>
+            <li>{3}</li>
+            <li>{4}</li>
+            <li>{5}</li>
+        </ul>
+        document.getElementById('root')
+       );
+</code>
+
+
+기본적인 리스트컴포넌트
+
+list의 key
+키는 아이템들을 구분하기위한 고유한 문자열이다.
+리액트에서의 키값은 같은 리스트에 있는 엘리먼트 사이에서만 고유한 값이면 된다,
+
+고유한 키값을 사용하는 방법 
+
+1. 키로 값을 사용하는 경우
+<code>
+    const number = [1,2,3,4,5]
+    const listItems =numbers.map((number)=>
+        <li key={number.toString()}>{number}</li>
+    )
+</code> > 넘버스배열에 숫자들이 중복되지않으면 문제가없지만, 중복된 숫자가 있다면 키값이 고유한값이 아니게 되기때문에 문제가 된다.
+
+2. 키값으로 id를 사용하는경우
+<code>
+const todoItems = todos.map((todo)=>
+    <li key={todo.id}>{todo.text}</li>
+)
+</code> > id라는것 자체가 고유한값이라는 것이기 때문에 키값으로 사용하기 적합하다/
+
+3.key로 인덱스틀ㄹ 사용하는경우
+code>
+const todoItems = todos.map((todo)=>
+    <li key={index}>{todo.text}</li>
+)
+</code>
+> 아이템들의 고ㅓ유한 아이디가 없을경우에만 사용해야함
+> 리액트에서는 키값을 명시적으로 넣어주지않으면 기본적으로 인덱스값을 키값으로 사용한다. 
+> 맵함수에서 두번째 파라메터로 제공해주는 인덱스를 키값으로 사용한다. 가능하나 배열에서아이템의 순서가 바뀔수있는경우에는 키값으로 인덱스를 사용하는걸 권장하지않는다.
+
+
+    </pre>
+
+    
 </body>
 </html>
