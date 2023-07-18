@@ -378,6 +378,45 @@ const todoItems = todos.map((todo)=>
 
     </pre>
 
+    <pre>
+        form = 양식이라는 뜻을 가지고 있다.
+        사용자로부터 입력을 받기 위해 사용
+        
+        Controlled Components
+        상용자가 입력한갑에 접근하고 제어할수 있도록 해주는 컴포넌트이다
+        값이 리액트의 통제를 받는 인풋 폼 엘리먼트이다.
+        <select multiple={true} value="{['B','C']}"></select>
+
+---------
+        Uncontrolled Component
+        file input 태그
+        디바이스의 저장 장치로부터 하나 또는 여러개의 파일을 선택할수 있는 html 태그
+        <input type="file" />
+        = Uncontrolled Component가 된다. 값이 리액트의 통제를 받지 않는다는 의미
+----------
+        Multiple input
+        여러개의 스테이트를 선언하여 각각의 입력에 대해 사용
+        
+        클래스 컴포넌트에서는 셋스테이트 함수 하나로 모든 스테이트의 값을 업데이트햇지만 
+        함수컴포넌트에서는 각스테이트의 변수마다 셋 함수가 따로 존재하기 때문에 각각의 셋 함수를사용해서 구현하면된다
     
+    
+        인풋 널 밸류
+        제어컴포넌트의 밸류프롭을 정해진 값으로 넣으면 
+        코드를 수정하지않는 한 입력값을 바꿀 수없다
+        밸류 프롭을 넣되 자유롭게 입력할 수 있게 만들고싶다면
+        값에 언디파인드, 널을 넣으면된다
+
+        <code>
+            ReactDOM.render(<input value="hi" /> , rootNode);
+
+            setTimeout(function(){
+                ReactDOM.render(<input value={null} /> , rootNode)
+            },1000);
+        </code>
+        퍼음에는 인풋의 값이 하이로 정해져있어서 값을 바꿀수없는 입력불가 상태였다가
+        1초뒤에 밸류가 null인 인풋태그가 렌더링되면서 입력가능한 상태로 바뀐다.
+        이렇게 하면 인풋에 밸류 프롭을 넣으면서 동시에 사용자가 값을 자유롭게 입력하게도 만들ㄹ 수 있다.
+    </pre>
 </body>
 </html>

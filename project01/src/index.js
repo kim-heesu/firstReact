@@ -13,11 +13,13 @@ import reportWebVitals from './reportWebVitals';
 // import ConfirmButton02 from './chapter_08/ConfirmButton02';
 // import LandingPage from './chapter_09/LandingPage';
 
-import AttendanceBook from './chapter_10/AttendanceBook'
+// import AttendanceBook from './chapter_10/AttendanceBook'
+
+import SignUp from "./chapter_11/SignUp"
 
 ReactDOM.render(
   <React.StrictMode>
-    <AttendanceBook />
+    <SignUp />
   </React.StrictMode>,
   document.getElementById('root')
 )
