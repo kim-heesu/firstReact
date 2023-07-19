@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TemperatureInput from "./TemperatureInput";
 
 function BoilingVerdict(props){
-    if(props.celcius >= 100) {
+    if(props.celsius >= 100) {
         return <p>물이 끓습니다.</p>;
     }
     return <p>물이 끓지 않습니다.</p>
@@ -31,6 +31,32 @@ function Calculator(props){
     const [scale, setScale] = useState("c");
 
     const handleCelsiusChange = (temperature)=>{
-        setTemperature
+        setTemperature(temperature)
+        setScale("c");
     }
-}
+
+    const handleFahrenheitChange = (temperature)=>{
+        setTemperature(temperature);
+        setScale('f');
+    }
+
+    const celsius = scale === "f" ? tryConvert(temperature, toCelsius) : temperature;
+    const fahrenheit = scale === "c"? tryConvert(temperature, toFahrenheit) : temperature;
+    return(
+        <div>
+            <TemperatureInput
+            scale="c"
+            temperature={celsius}
+            onTemparatureChange={handleCelsiusChange}
+            />
+            <TemperatureInput
+            scale='f'
+            temperature={fahrenheit}
+            onTemparatureChange={handleFahrenheitChange}
+            />
+            <BoilingVerdict celsius={parseFloat(celsius)} />
+        </div>
+    )
+};
+
+export default Calculator;
