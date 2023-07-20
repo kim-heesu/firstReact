@@ -420,7 +420,7 @@ const todoItems = todos.map((todo)=>
     </pre>
 
     <pre>
-        
+
         ㅇ여러개의 컴포넌트들 사이에서 스테이트륽 공유하는 방ㅇ법
 
         Lifting State Up
@@ -437,8 +437,49 @@ const todoItems = todos.map((todo)=>
     <pre>
         Composition vs Inheritance
 
-        Composition(구성,합성)
+        Composition(구성,'합성')
         여러개의 컴포넌틀를 합쳐 새로운 컴포넌트를 만드는 것
+
+        에이라는 컴포넌트와 비라는 컴포넌트ㅏ 반복적으로 나온다.
+        이 페이지는 컴포넌트 에이 비를 합쳐 페이지 컴포넌트를 만든것읻기 때문에 
+        컴포지션, 즉 합성을 사용했다 볼수있따.
+        
+
+        컴포지션 사용기법
+
+        1. Containment
+        허위 컴포넌트를 포함하는 형태의 합성 방법
+        sidebar나 dialog같은 박스형태의 컴포넌트는 자신의 하위 컴포넌트를 미리 알 수 없다.
+        children이라는  prop을 사용해서 조합한다.
+        해당 컴포넌트를 사용하는 개발자가 어떤것을 넣냐에 따라 하위 컴포넌트가 달라짐
+        
+        children prop을 사용한 FancyBorder컴포넌트
+        <code>
+            function FancyBorder(props){
+                return(
+                    <div className="{'fandyBorder FandyBorder-'}props.color">
+                        {props.children}
+                    </div>
+                )
+            }
+        </code>
+
+        FancyBorder 컴포넌트 안에 있는 모든 JSX 태그는 children으로 전달된다.
+       <code>
+        function WelcomeDialog(props){
+            return(
+                <FandyBorder color="blue">
+                    <h1 className="Dialog-title">
+                        어서오세요
+                    </h1>
+                    <p className="Dialog-message">
+                        환영합니다.
+                    </p>
+                </FandyBorder>
+            )
+        }
+       </code>
+       
 
         Inheritance
     </pre>
