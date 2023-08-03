@@ -20,7 +20,7 @@ import reportWebVitals from './reportWebVitals';
 // import Calculator from './chapter_12/Calculator'
 // import ProfileCard from './chapter_13/ProfileCard';
 
-import DarkOrLight from './chapther_14/DarkOrLight';
+import DarkOrLight from './chapter_14/DarkOrLight';
 ReactDOM.render(
   <React.StrictMode>
     <DarkOrLight />
