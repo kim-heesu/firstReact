@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import Library from './chapter_03/Libraty';
@@ -20,10 +19,13 @@ import reportWebVitals from './reportWebVitals';
 // import Calculator from './chapter_12/Calculator'
 // import ProfileCard from './chapter_13/ProfileCard';
 
-import DarkOrLight from './chapter_14/DarkOrLight';
+// import DarkOrLight from './chapter_14/DarkOrLight';
+// import HiReact from './chapter_15/HiReact'
+import Blocks from './chapter_15/Blocks';
+
 ReactDOM.render(
   <React.StrictMode>
-    <DarkOrLight />
+    <Blocks />
   </React.StrictMode>,
   document.getElementById('root')
 )
