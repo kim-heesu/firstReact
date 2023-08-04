@@ -35,6 +35,7 @@ const blockItems = [
     }
 ];
 
+
 function Blocks(props){
     return (
         <Wrapper>
