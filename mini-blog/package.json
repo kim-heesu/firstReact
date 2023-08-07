@@ -2,7 +2,7 @@
   "name": "mini-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage":"ttps://kim-heesu.github.io/firstReact/heesuBlog",
+  "homepage":"https://kim-heesu.github.io/firstReact/heesuBlog",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
