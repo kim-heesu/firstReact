@@ -1,0 +1,2 @@
+- name: Copy build files
+  run: cp -R build/* ../heesuBlog/
