@@ -19,7 +19,7 @@ const MainTitleText = styled.p`
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename="/heesuBlog/">
       <MainTitleText>히수의 미니 블로그임당~</MainTitleText>
       <Routes>
         <Route index element={<MainPage />} />
