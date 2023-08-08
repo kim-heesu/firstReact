@@ -19,7 +19,7 @@ jobs:
       - name: Commit and Push Changes
         run: |
           git config --local user.email "cjmgmltn@naver.com"
-          git config --local user.name "kimheesu"
+          git config --local user.name "kim-heesu"
           git add .
           git commit -m "Deploy to GitHub Pages"
           git push
