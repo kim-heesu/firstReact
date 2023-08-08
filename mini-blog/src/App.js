@@ -20,7 +20,7 @@ const MainTitleText = styled.p`
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <MainTitleText>수수는 기린블로그</MainTitleText>
+      <MainTitleText>블로그수정수정</MainTitleText>
       <Routes>
         <Route index element={<MainPage />} />
         <Route path="post-write" element={<PostWritePage />} />
