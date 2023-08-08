@@ -1,0 +1,25 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 배포할 브랜치명
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Copy build files
+        run: cp -R ../mini-blog/build/* ../../heesuBlog/
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "cjmgmltn@naver.com"
+          git config --local user.name "kim-heesu"
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          git push
